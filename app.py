@@ -34,7 +34,7 @@ if not os.path.exists(model_path):
     gdown.download(url, model_path, quiet=False)
 
 
-model_path = "trained_plant_disease_model1.keras"
+
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))

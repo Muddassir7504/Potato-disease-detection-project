@@ -5,24 +5,6 @@ import gdown
 import os
 
 # Function to set background image
-def set_background(image_url):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: url({image_url}) no-repeat center center fixed;
-            background-size: cover;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# ✅ Replace with your background image URL
-background_url = "https://img.freepik.com/premium-photo/leaf-plant-pattern-illustration_728905-2516.jpg"  # Change this to your image link
-
-# Apply background
-set_background(background_url)
 
 file_id = "1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c"
 url = 'https://drive.google.com/uc?id=1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c'

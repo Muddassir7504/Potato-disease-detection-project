@@ -24,9 +24,8 @@ background_url = "https://img.freepik.com/premium-photo/leaf-plant-pattern-illus
 # Apply background
 set_background(background_url)
 
-
-file_id = "1GB5G1EKz2WqJFSDGmgUAAFEtXeNJ1dXQ"
-url = 'https://drive.google.com/file/d/1GB5G1EKz2WqJFSDGmgUAAFEtXeNJ1dXQ/view?usp=sharing'
+file_id = "1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c"
+url = 'https://drive.google.com/uc?id=1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c'
 model_path = "trained_plant_disease_model1.keras"
 
 

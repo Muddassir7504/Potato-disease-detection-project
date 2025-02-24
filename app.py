@@ -4,9 +4,30 @@ import numpy as np
 import gdown
 import os
 
-file_id = "1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c"
-url = 'https://drive.google.com/uc?id=1_9Q28QeJXnyRCH18IVxpX5KhuDtZC40c'
-model_path = "trained_plant_disease_model.keras"
+# Function to set background image
+def set_background(image_url):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url({image_url}) no-repeat center center fixed;
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# ✅ Replace with your background image URL
+background_url = "https://img.freepik.com/premium-photo/leaf-plant-pattern-illustration_728905-2516.jpg"  # Change this to your image link
+
+# Apply background
+set_background(background_url)
+
+
+file_id = "1GB5G1EKz2WqJFSDGmgUAAFEtXeNJ1dXQ"
+url = 'https://drive.google.com/file/d/1GB5G1EKz2WqJFSDGmgUAAFEtXeNJ1dXQ/view?usp=sharing'
+model_path = "trained_plant_disease_model1.keras"
 
 
 if not os.path.exists(model_path):
@@ -14,7 +35,7 @@ if not os.path.exists(model_path):
     gdown.download(url, model_path, quiet=False)
 
 
-model_path = "trained_plant_disease_model.keras"
+model_path = "trained_plant_disease_model1.keras"
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
@@ -28,13 +49,6 @@ st.sidebar.title("Plant Disease Detection System for Sustainable Agriculture")
 app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 #app_mode = st.sidebar.selectbox("Select Page",["Home"," ","Disease Recognition"])
 
-# import Image from pillow to open images
-from PIL import Image
-img = Image.open("Diseases.png")
-
-# display image using streamlit
-# width is used to set the width of an image
-st.image(img)
 
 #Main Page
 if(app_mode=="HOME"):
@@ -48,7 +62,6 @@ elif(app_mode=="DISEASE RECOGNITION"):
         st.image(test_image,width=4,use_column_width=True)
     #Predict button
     if(st.button("Predict")):
-        st.snow()
         st.write("Our Prediction")
         result_index = model_prediction(test_image)
         #Reading Labels
